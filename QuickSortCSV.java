@@ -170,6 +170,7 @@ public class QuickSortCSV {
 							printItems(itemsForLunch);
 							break;
 					}
+					break;
 				case "g":
 					System.out.println("----------------------------------------");
 					System.out.println("\n  Sort group by: parental education: \n");
@@ -190,8 +191,10 @@ public class QuickSortCSV {
 							printItems(itemsForCourse);
 							break;
 					}
+					break;
 				default:
 					System.out.println("Invalid option.");
+					break;
 			}
 		} else {
 			System.out.println("Execution canceled.");
@@ -295,20 +298,22 @@ public class QuickSortCSV {
 			System.out.println("| " + score + " |");
 			System.out.println(" ----");
 			count++;
+			if (count == 15) {
+				break;
+			}
+
 		}
 	}
 
 	public static void binarySearchAndPrint(int[] array, int item) {
 		int low = 0;
 		int high = array.length - 1;
-		boolean found = false;
 
 		while (low <= high) {
 			int middle = (low + high) / 2;
 			int kick = array[middle];
 
 			if (kick == item) {
-				found = true;
 				System.out.println("Score " + item + " encontrado no índice: ");
 				System.out.println(" ----");
 				System.out.println("| " + middle + " |");
